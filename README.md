@@ -1,6 +1,6 @@
 ## My Linux Mint LMDE 7 customization ![alt text](https://github.com/miko6/appunti-di-linuxmint/blob/main/immagini/mintlogo.png "mintlogo")
 
-#### <p style="text-align: center;"> Impostazioni del sistema </p>
+#### Impostazioni del sistema
 
 1. *Avvio automatico* nelle impostazioni di installazione.
 
@@ -47,15 +47,11 @@
 - aggiungere la seguente stringa alla fine del file:
 - | `FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"`
 
-#### <p style="text-align: center;"> Software </p>
+#### Software
 
-14. Installare **htop**
+14. `sudo apt install htop`
 
-- `sudo apt install htop`
-
-15. Installare **preload** (caricamento in memoria dei programmi più usati)
-    
-- `sudo apt install preload`
+15. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
 
 16. `sudo apt install unrar`
 
