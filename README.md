@@ -12,6 +12,6 @@
 
 6. Azzerare tempo bootloader
 
-`sudo nano /etc/default/grub`
+- `sudo nano /etc/default/grub`
 - settare GRUB_TIMEOUT a 0
-dare un `sudo update-grub`
+- dare un `sudo update-grub`
