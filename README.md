@@ -15,3 +15,13 @@
 - `sudo nano /etc/default/grub`
 - settare GRUB_TIMEOUT a 0
 - dare un `sudo update-grub`
+
+7. Settare un IP statico e cambiare DNS
+
+- Clic sull'icona di rete/Impostazioni di rete/Selezioniamo l'interfaccia di rete e clic sull'icona ingranaggio delle impostazioni, nella sezione IPV4 impostiamo i valori di Getaway e Subnet mask.
+- Impostiamo anche i nostri DNS
+
+| DNS        | Primario | Secondario |
+| ---------- | -------- | ---------- |
+| Cloudflare | 1.1.1.1  | 1.0.0.1    |
+| Google     | 8.8.8.8  | 8.8.4.4    |
