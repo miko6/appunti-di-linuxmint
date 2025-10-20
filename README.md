@@ -47,31 +47,54 @@
 - aggiungere la seguente stringa alla fine del file:
 - | `FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"`
 
+14. *Abilitare condivisione cartella*
+
+- `sudo apt install samba` (se non installato)
+- Controllare che l'utente in Utenti e Gruppi sia inserito nel gruppo sambashare
+- `sudo smbpasswd -a nomeutente`
+- digitare prima la password amministratore e poi due volte la password per la condivisione
+- riavviare il server samba con `sudo service smbd restart` o riavviare il sistema
+- Aggiungere una nuova regola sul firewall, le voci devono essere:  
+``` | Politica | Consenti | ```  
+``` | Direzione | Ingresso | ```  
+``` | Categoria | Network | ```  
+``` | Sotto-categoria | Tutte | ```  
+``` | Applicazione | Samba | ```  
+- Creare una cartella in una posizione a piacere (ad esempio il desktop), clic con il tasto destro e scegliere Opzioni condivisione, abilitare la voce Condividi questa cartella e mettere la spunta a Permetti ad altri di creare...  
+- Modifichiamo ora il file smb.conf  
+`sudo nano /etc/samba/smb.conf`  
+* aggiungiamo le seguenti voci alla fine del file:  
+` [nomeascelta]`  
+` path = /home/nomeutente/nomecartella`  
+` read only = no`  
+` force user = nomeutente`  
+` guest ok = no`  
+
 #### Software
 
-14. `sudo apt install htop`
+15. `sudo apt install htop`
 
-15. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
+16. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
 
-16. `sudo apt install unrar`
+17. `sudo apt install unrar`
 
-17. `sudo apt install git `
+18. `sudo apt install git `
 
-18. Icone **NUMIX**
+19. Icone **NUMIX**
     
 - `sudo apt install numix-icon-theme-circle `
 
-19. [Icone **KORA**](https://github.com/bikass/kora)
+20. [Icone **KORA**](https://github.com/bikass/kora)
 
-20. Installare *font microsoft*.
+21. Installare *font microsoft*.
 
 - `sudo apt install ttf-mscorefonts-installer`
 
-21. [**MediaInfo** tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
+22. [**MediaInfo** tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
 
-22. Installare [**cpu-x**](https://community.linuxmint.com/software/view/cpu-x)
+23. Installare [**cpu-x**](https://community.linuxmint.com/software/view/cpu-x)
 
-23. - [**Chrome**](https://support.google.com/chrome/a/answer/9025926?hl=it)
+24. - [**Chrome**](https://support.google.com/chrome/a/answer/9025926?hl=it)
     - Avidemux
     - Arduino IDE
     - [**Edge**](https://www.microsoft.com/it-it/edge/download?form=MA13FJ)
@@ -83,6 +106,3 @@
     - Gimp
     - Telegram
     - PDF Arranger
-
-
-
