@@ -18,9 +18,9 @@
 - settare GRUB_TIMEOUT a 0
 - dare un `sudo update-grub`
 
-1. Attivare il **Firewall**
+7. Attivare il **Firewall**
 
-2. Settare un *IP statico* e cambiare *DNS*.
+8. Settare un *IP statico* e cambiare *DNS*.
 
 - Clic sull'icona di rete/Impostazioni di rete/Selezioniamo l'interfaccia di rete e clic sull'icona ingranaggio delle impostazioni, nella sezione IPV4 impostiamo i valori di Getaway e Subnet mask.
 - Impostiamo anche i nostri *DNS*:
