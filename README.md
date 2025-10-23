@@ -148,4 +148,16 @@
     - [**Acestreamplayer**](https://snapcraft.io/install/acestreamplayer/debian)
     - Gimp
     - Telegram
-    - PDF Arranger
+    - PDF Arranger  
+
+#### Extra
+
+27. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
+
+`sudo apt install tlp tlp-rdw`
+
+28. Su Linux Mint Zara 22.2 abilitare *snap* per installare **acestreamplayer**
+
+`sudo rm /etc/apt/preferences.d/nosnap.pref`
+`sudo apt install snapd`
+`sudo snap install acestreamplayer`
