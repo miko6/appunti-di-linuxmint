@@ -120,7 +120,7 @@
 
 19. `sudo apt install git `
 
-20. sudo apt install jq  
+20. `sudo apt install jq`  
 > :memo: **Note:** jq in Linux è un processore di JSON da riga di comando, flessibile e leggero, utilizzato per manipolare e trasformare dati in formato JSON
 
 21. Icone **NUMIX**
