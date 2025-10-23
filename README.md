@@ -120,21 +120,24 @@
 
 19. `sudo apt install git `
 
-20. Icone **NUMIX**
+20. sudo apt install jq  
+> :memo: **Note:** jq in Linux è un processore di JSON da riga di comando, flessibile e leggero, utilizzato per manipolare e trasformare dati in formato JSON
+
+21. Icone **NUMIX**
     
 - `sudo apt install numix-icon-theme-circle `
 
-21. [Icone **KORA**](https://github.com/bikass/kora)
+22. [Icone **KORA**](https://github.com/bikass/kora)
 
-22. Installare *font microsoft*.
+23. Installare *font microsoft*.
 
 - `sudo apt install ttf-mscorefonts-installer`
 
-23. [**MediaInfo** tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
+24. [**MediaInfo** tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
 
-24. Installare [**cpu-x**](https://community.linuxmint.com/software/view/cpu-x)
+25. Installare [**cpu-x**](https://community.linuxmint.com/software/view/cpu-x)
 
-25. - [**Chrome**](https://support.google.com/chrome/a/answer/9025926?hl=it)
+26. - [**Chrome**](https://support.google.com/chrome/a/answer/9025926?hl=it)
     - Avidemux
     - Arduino IDE
     - [**Edge**](https://www.microsoft.com/it-it/edge/download?form=MA13FJ)
