@@ -47,7 +47,47 @@
 - aggiungere la seguente stringa alla fine del file:
 - | `FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"`
 
-14. *Abilitare condivisione cartella*
+14. *Font rendering fix*
+- Create a folder in home call it .fontconfig inside this folder create a blank text call it fonts.conf and paste this then log OFF/ON:  
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <match target="font">
+        <edit name="antialias" mode="assign">
+            <bool>true</bool>
+        </edit>
+        <edit name="hinting" mode="assign">
+            <bool>true</bool>
+        </edit>
+        <edit name="hintstyle" mode="assign">
+            <const>hintslight</const>
+        </edit>
+        <edit name="rgba" mode="assign">
+            <const>rgb</const>
+        </edit>
+        <edit name="autohint" mode="assign">
+            <bool>true</bool>
+        </edit>
+        <edit name="lcdfilter" mode="assign">
+            <const>lcddefault</const>
+        </edit>
+        <edit name="dpi" mode="assign">
+            <double>102</double>
+        </edit>
+    </match>
+    <match target="font">
+        <test name="weight" compare="more">
+            <const>medium</const>
+        </test>
+        <edit name="autohint" mode="assign">
+            <bool>true</bool>
+        </edit>
+    </match>
+</fontconfig>
+```
+
+15.  *Abilitare condivisione cartella*
 
 - `sudo apt install samba` (se non installato)
 - Controllare che l'utente in Utenti e Gruppi sia inserito nel gruppo sambashare
@@ -72,29 +112,29 @@
 
 #### Software
 
-15. `sudo apt install htop`
+16. `sudo apt install htop`
 
-16. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
+17. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
 
-17. `sudo apt install unrar`
+18. `sudo apt install unrar`
 
-18. `sudo apt install git `
+19. `sudo apt install git `
 
-19. Icone **NUMIX**
+20. Icone **NUMIX**
     
 - `sudo apt install numix-icon-theme-circle `
 
-20. [Icone **KORA**](https://github.com/bikass/kora)
+21. [Icone **KORA**](https://github.com/bikass/kora)
 
-21. Installare *font microsoft*.
+22. Installare *font microsoft*.
 
 - `sudo apt install ttf-mscorefonts-installer`
 
-22. [**MediaInfo** tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
+23. [**MediaInfo** tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
 
-23. Installare [**cpu-x**](https://community.linuxmint.com/software/view/cpu-x)
+24. Installare [**cpu-x**](https://community.linuxmint.com/software/view/cpu-x)
 
-24. - [**Chrome**](https://support.google.com/chrome/a/answer/9025926?hl=it)
+25. - [**Chrome**](https://support.google.com/chrome/a/answer/9025926?hl=it)
     - Avidemux
     - Arduino IDE
     - [**Edge**](https://www.microsoft.com/it-it/edge/download?form=MA13FJ)
