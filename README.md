@@ -123,21 +123,23 @@
 20. `sudo apt install jq`  
 > :memo: **Note:** jq in Linux è un processore di JSON da riga di comando, flessibile e leggero, utilizzato per manipolare e trasformare dati in formato JSON
 
-21. Icone **NUMIX**
+21. `sudo apt install mpv`
+
+22. Icone **NUMIX**
     
 - `sudo apt install numix-icon-theme-circle `
 
-22. [Icone **KORA**](https://github.com/bikass/kora)
+23. [Icone **KORA**](https://github.com/bikass/kora)
 
-23. Installare *font microsoft*.
+24. Installare *font microsoft*.
 
 - `sudo apt install ttf-mscorefonts-installer`
 
-24. [**MediaInfo** tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
+25. [**MediaInfo** tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
 
-25. Installare [**cpu-x**](https://community.linuxmint.com/software/view/cpu-x)
+26. Installare [**cpu-x**](https://community.linuxmint.com/software/view/cpu-x)
 
-26. - [**Chrome**](https://support.google.com/chrome/a/answer/9025926?hl=it)
+27. - [**Chrome**](https://support.google.com/chrome/a/answer/9025926?hl=it)
     - Avidemux
     - Arduino IDE
     - [**Edge**](https://www.microsoft.com/it-it/edge/download?form=MA13FJ)
@@ -152,11 +154,11 @@
 
 #### Extra
 
-27. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
+28. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
 
 `sudo apt install tlp tlp-rdw`
 
-28. Su Linux Mint Zara 22.2 abilitare *snap* per installare **acestreamplayer**
+29. Su Linux Mint Zara 22.2 abilitare *snap* per installare **acestreamplayer**
 
 `sudo rm /etc/apt/preferences.d/nosnap.pref`
 `sudo apt install snapd`
