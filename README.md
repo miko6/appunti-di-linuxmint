@@ -128,6 +128,7 @@
 > :memo: **Note:** jq in Linux è un processore di JSON da riga di comando, flessibile e leggero, utilizzato per manipolare e trasformare dati in formato JSON
 
 23. `sudo apt install mpv`
+> :memo: *script* da aggiungere: [**autoload.lua**](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua) - [**autocrop.lua**](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autocrop.lua)
 
 24. Icone **NUMIX**
     
