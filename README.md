@@ -157,6 +157,7 @@
     - Telegram
     - PDF Arranger
     - GParted
+    - FFmpeg
 
 30.  Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid** 
 
