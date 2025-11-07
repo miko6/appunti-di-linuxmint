@@ -49,9 +49,11 @@
 15.  *Migliorare font su temi scuri*
 - `sudo nano /etc/environment`
 - aggiungere la seguente stringa alla fine del file:
-- | `FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"`
+```
+FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
+```
 
-16.  *Font rendering fix*
+1.   *Font rendering fix*
 - Create a folder in home call it .fontconfig inside this folder create a blank text call it fonts.conf and paste this then log OFF/ON:  
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -91,7 +93,7 @@
 </fontconfig>
 ```
 
-17.   *Abilitare condivisione cartella*
+1.    *Abilitare condivisione cartella*
 
 - `sudo apt install samba` (se non installato)
 - Controllare che l'utente in Utenti e Gruppi sia inserito nel gruppo sambashare
@@ -108,11 +110,13 @@
 - Modifichiamo ora il file smb.conf  
 `sudo nano /etc/samba/smb.conf`  
 * aggiungiamo le seguenti voci alla fine del file:  
-` [nomeascelta]`  
-` path = /home/nomeutente/nomecartella`  
-` read only = no`  
-` force user = nomeutente`  
-` guest ok = no`  
+```
+[nomeascelta]  
+path = /home/nomeutente/nomecartella  
+read only = no
+force user = nomeutente  
+guest ok = no
+```
 
 #### Software
 
@@ -173,6 +177,6 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 
 32. Su Linux Mint Zara 22.2 abilitare *snap* per installare **acestreamplayer**
 
-`sudo rm /etc/apt/preferences.d/nosnap.pref`
-`sudo apt install snapd`
+`sudo rm /etc/apt/preferences.d/nosnap.pref`  
+`sudo apt install snapd`  
 `sudo snap install acestreamplayer`
