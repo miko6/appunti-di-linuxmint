@@ -133,7 +133,7 @@ guest ok = no
 
 23. `sudo apt install mpv`
 > :memo: *script* da aggiungere: [**autoload.lua**](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua) - [**autocrop.lua**](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autocrop.lua)  
-> Per poter scorrere tra i file di una cartella con i tasti *PG &#8593; & PG &#8595;* creare il file *input.conf* nella cartella /home/.config/mpv con le seguenti righe:  
+> Per poter scorrere tra i file di una cartella con i tasti *PG &#8593; & PG &#8595;* creare il file *input.conf* nella cartella */home/.config/mpv* con le seguenti righe:  
 ```
 PGUP playlist-prev ; show-text "${playlist-pos-1}/${playlist-count}"
 PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
