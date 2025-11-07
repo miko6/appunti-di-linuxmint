@@ -6,7 +6,7 @@
 
 2. Attivare **Timeshift**.
 
-3. Impostazioni di sistema/Salvaschermo - disattivare le due voci in Impostazioni di blocco.
+3. *Impostazioni di sistema/Salvaschermo* - disattivare le due voci in *Impostazioni di blocco*.
 
 4. Disattivare *bluetooth* in Applicazioni d'avvio.
 
@@ -17,7 +17,7 @@
 7. Abilitare lo *scalamento frazionario* nelle impostazioni del monitor.
 
 - `sudo nano /etc/default/grub`
-- settare GRUB_TIMEOUT a 0
+- settare *GRUB_TIMEOUT* a *0*
 - dare un `sudo update-grub`
 
 8. Attivare il **Firewall**
@@ -54,7 +54,7 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 ```
 
 1.   *Font rendering fix*
-- Create a folder in home call it .fontconfig inside this folder create a blank text call it fonts.conf and paste this then log OFF/ON:  
+- Create a folder in home call it *.fontconfig* inside this folder create a blank text call it *fonts.conf* and paste this then log OFF/ON:  
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
@@ -106,7 +106,7 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 ``` | Categoria | Network | ```  
 ``` | Sotto-categoria | Tutte | ```  
 ``` | Applicazione | Samba | ```  
-- Creare una cartella in una posizione a piacere (ad esempio il desktop), clic con il tasto destro e scegliere Opzioni condivisione, abilitare la voce Condividi questa cartella e mettere la spunta a Permetti ad altri di creare...  
+- Creare una cartella in una posizione a piacere (ad esempio il desktop), clic con il tasto destro e scegliere *Opzioni condivisione*, abilitare la voce *Condividi questa cartella* e mettere la spunta a *Permetti ad altri di creare...*  
 - Modifichiamo ora il file smb.conf  
 `sudo nano /etc/samba/smb.conf`  
 * aggiungiamo le seguenti voci alla fine del file:  
