@@ -167,6 +167,7 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
     - PDF Arranger
     - GParted
     - FFmpeg
+    - [**VirtualBox**](https://www.virtualbox.org/wiki/Linux_Downloads)
 
 30.  Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid** 
 
