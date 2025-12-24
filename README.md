@@ -101,16 +101,15 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 * `sudo smbpasswd -a nomeutente`
 * digitare prima la password amministratore e poi due volte la password per la condivisione
 * riavviare il server samba con `sudo service smbd restart` o riavviare il sistema
-* \
-  \
-  \
-  \
-  \
-  Aggiungere una nuova regola sul firewall, le voci devono essere:`| Politica | Consenti || Direzione | Ingresso || Categoria | Network || Sotto-categoria | Tutte || Applicazione | Samba |`
-* Creare una cartella in una posizione a piacere (ad esempio il desktop), clic con il tasto destro e scegliere *Opzioni condivisione*, abilitare la voce *Condividi questa cartella* e mettere la spunta a *Permetti ad altri di creare...*
-* \
-  Modifichiamo ora il file smb.conf`sudo nano /etc/samba/smb.conf`
+* Aggiungere una nuova regola sul firewall, le voci devono essere:  
 
+`| Politica | Consenti |`  
+`| Direzione | Ingresso |`  
+`| Categoria | Network |`  
+`| Sotto-categoria | Tutte |`  
+`| Applicazione | Samba |`  
+
+* Creare una cartella in una posizione a piacere (ad esempio il desktop), clic con il tasto destro e scegliere *Opzioni condivisione*, abilitare la voce *Condividi questa cartella* e mettere la spunta a *Permetti ad altri di creare...*  
 
 * aggiungiamo le seguenti voci alla fine del file:
 
