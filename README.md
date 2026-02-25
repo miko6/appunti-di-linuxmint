@@ -20,7 +20,7 @@
 9. Settare un *IP statico* e cambiare *DNS*.
 
 * Clic sull'icona di rete/Impostazioni di rete/Selezioniamo l'interfaccia di rete e clic sull'icona ingranaggio delle impostazioni, nella sezione IPV4 impostiamo i valori di Getaway e Subnet mask.
-* Impostiamo il *DNS* del server con PiHole:
+* Impostiamo il *DNS* del server con PiHole oppure usiamo i classici:  
 
 | DNS | Primario | Secondario |
 |----|----|----|
@@ -183,8 +183,6 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 `sudo apt install tlp tlp-rdw`
 
 
-32. Su Linux Mint Zara 22.2 abilitare *snap* per installare **acestreamplayer**
-
-
+32. Su Linux Mint abilitare *snap* per installare **acestreamplayer**
 
 `sudo rm /etc/apt/preferences.d/nosnap.prefsudo apt install snapdsudo snap install acestreamplayer`
