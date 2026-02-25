@@ -175,14 +175,26 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 
 30. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**
 
+31. Per evitare conflitti tra le *WebUi* dei servizi installati nel server andiamo a modificare il file `/etc/hosts` nel sistema client **(nel mio caso Linux Mint LMDE)** nel seguente modo: 
+
+`sudo nano /etc/hosts`  
+
+aggiungiamo al file le seguenti linee  
+
+```
+192.168.1.xxx   pi.hole  
+192.168.1.xxx   webmin.local  
+192.168.1.xxx   portainer.local  
+```
+
 #### Extra
 
 
-31. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
+32. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
 
 `sudo apt install tlp tlp-rdw`
 
 
-32. Su Linux Mint abilitare *snap* per installare **acestreamplayer**
+33. Su Linux Mint abilitare *snap* per installare **acestreamplayer**
 
 `sudo rm /etc/apt/preferences.d/nosnap.prefsudo apt install snapdsudo snap install acestreamplayer`
