@@ -175,7 +175,7 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 
 30. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**
 
-31. Per evitare conflitti tra le *WebUi* dei servizi installati nel server andiamo a modificare il file `/etc/hosts` nel sistema client **(nel mio caso Linux Mint LMDE)** nel seguente modo: 
+31. Per evitare conflitti tra le *WebUi* dei servizi installati nel server andiamo a modificare il file `/etc/hosts` nel seguente modo: 
 
 `sudo nano /etc/hosts`  
 
