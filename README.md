@@ -20,7 +20,7 @@
 9. Settare un *IP statico* e cambiare *DNS*.
 
 * Clic sull'icona di rete/Impostazioni di rete/Selezioniamo l'interfaccia di rete e clic sull'icona ingranaggio delle impostazioni, nella sezione IPV4 impostiamo i valori di Getaway e Subnet mask.
-* Impostiamo anche i nostri *DNS*:
+* Impostiamo il *DNS* del server con PiHole:
 
 | DNS | Primario | Secondario |
 |----|----|----|
@@ -172,8 +172,8 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
     * PDF Arranger
     * GParted
     * FFmpeg
-    * Virtualbox
-30. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**
+
+30. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**
 
 #### Extra
 
