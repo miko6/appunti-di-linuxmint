@@ -51,7 +51,7 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 ```
 
 
-1. *Font rendering fix*
+16. *Font rendering fix*
 
 * Create a folder in home call it *.fontconfig* inside this folder create a blank text call it *fonts.conf* and paste this then log OFF/ON:
 
@@ -94,7 +94,7 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 ```
 
 
-1. *Abilitare condivisione cartella*
+17. *Abilitare condivisione cartella*
 
 * `sudo apt install samba` (se non installato)
 * Controllare che l'utente in Utenti e Gruppi sia inserito nel gruppo sambashare
