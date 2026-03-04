@@ -121,7 +121,35 @@ force user = nomeutente
 guest ok = no
 ```  
 
-18. *Montare disco di rete all'avvio*  
+18. *Montaggio automatico disco secondario*
+
+- identificare il disco ed il suo *UUID* con il comando  
+
+`sudo blkid`  
+
+- creiamo il punto di mount  
+
+`sudo mkdir -p /mnt/xxxx`  
+
+- modifica del file /etc/fstab  
+
+`sudo nano /etc/fstab`  
+
+- aggiungiamo questa riga alla fine del file  
+
+`UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /mnt/xxxx  ext4  defaults,noatime,nofail  0  2`  
+
+- verifiche, prima senza riavviare  
+
+`sudo mount -a` (se non si sono errori il file funziona)  
+
+- riavviamo  
+
+`sudo systemctl reboot`  
+
+- al riavvio `lsblk` per conferma  
+
+19. *Montare disco di rete all'avvio*  
 
 * Per verificare che l'utility sia installata lanciare un:  
 
@@ -129,7 +157,7 @@ guest ok = no
 
 * Crea un File per le Credenziali  
 
-`sudo mkdir -p /etc/samba`  
+`sudo mkdir -p /etc/samba`
 `sudo nano /etc/samba/credenziali-server`  
 
 * Inserisci le tue credenziali nel file seguendo questa struttura senza spazi intorno al segno =:  
@@ -162,16 +190,16 @@ domain=DOMINIO_OPPURE_WORKGROUP
 #### Software
 
 
-19. `sudo apt install htop`
-20. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
-21. `sudo apt install unrar`
-22. `sudo apt install git `
-23. `sudo apt install jq`
+20. `sudo apt install htop`
+21. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
+22. `sudo apt install unrar`
+23. `sudo apt install git `
+24. `sudo apt install jq`
 
 > :memo: **Note:** jq in Linux è un processore di JSON da riga di comando, flessibile e leggero, utilizzato per manipolare e trasformare dati in formato JSON
 
 
-24. `sudo apt install mpv`
+25. `sudo apt install mpv`
 
 > \
 > :memo: *script* da aggiungere: **[autoload.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua)** - **[autocrop.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autocrop.lua)**Per poter scorrere tra i file di una cartella con i tasti *PG ↑ & PG ↓* creare il file *input.conf* nella cartella */home/.config/mpv* con le seguenti righe:
@@ -182,20 +210,20 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 ```
 
 
-25. Icone **NUMIX**
+26. Icone **NUMIX**
 
 * `sudo apt install numix-icon-theme-circle `
 
 
-26. [Icone ](https://github.com/bikass/kora)**[KORA](https://github.com/bikass/kora)**
-27. Installare *font microsoft*.
+27. [Icone ](https://github.com/bikass/kora)**[KORA](https://github.com/bikass/kora)**
+28. Installare *font microsoft*.
 
 * `sudo apt install ttf-mscorefonts-installer`
 
 
-28. **[MediaInfo](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)**[ tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
-29. Installare **[cpu-x](https://community.linuxmint.com/software/view/cpu-x)**
-30. \
+29. **[MediaInfo](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)**[ tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
+30. Installare **[cpu-x](https://community.linuxmint.com/software/view/cpu-x)**
+31. \
     * **[Chrome](https://support.google.com/chrome/a/answer/9025926?hl=it)**
     * Avidemux
     * Arduino IDE
@@ -211,9 +239,9 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
     * GParted
     * FFmpeg
 
-31. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**
+32. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**
 
-32. Per evitare conflitti tra le *WebUi* dei servizi installati nel server andiamo a modificare il file `/etc/hosts` nel seguente modo: 
+33. Per evitare conflitti tra le *WebUi* dei servizi installati nel server andiamo a modificare il file `/etc/hosts` nel seguente modo: 
 
 `sudo nano /etc/hosts`  
 
@@ -228,11 +256,11 @@ aggiungiamo al file le seguenti linee
 #### Extra
 
 
-33. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
+34. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
 
 `sudo apt install tlp tlp-rdw`
 
 
-34. Su Linux Mint abilitare *snap* per installare **acestreamplayer**
+35. Su Linux Mint abilitare *snap* per installare **acestreamplayer**
 
 `sudo rm /etc/apt/preferences.d/nosnap.prefsudo apt install snapdsudo snap install acestreamplayer`
