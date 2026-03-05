@@ -182,7 +182,7 @@ domain=DOMINIO_OPPURE_WORKGROUP
 
 * Aggiungi la seguente riga alla fine del file, sostituendo i valori segnaposto con i tuoi:  
 
-`//192.168.1.192/NASm2 /media/NASm2 cifs credentials=/etc/samba/credenziali-server,uid=1000,gid=1000,iocharset=utf8,_netdev,x-systemd.automount,vers=3.0 0 0`  
+`//192.168.1.192/discoserver /media/discoserver cifs credentials=/etc/samba/credenziali-server,uid=1000,gid=1000,iocharset=utf8,_netdev,x-systemd.device-timeout=30,vers=3.0,actimeo=30,rsize=65536,wsize=65536 0 0`  
 
 * Riavvia  
 
