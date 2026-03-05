@@ -157,7 +157,7 @@ guest ok = no
 
 * Crea un File per le Credenziali  
 
-`sudo mkdir -p /etc/samba`
+`sudo mkdir -p /etc/samba`  
 `sudo nano /etc/samba/credenziali-server`  
 
 * Inserisci le tue credenziali nel file seguendo questa struttura senza spazi intorno al segno =:  
@@ -184,7 +184,9 @@ domain=DOMINIO_OPPURE_WORKGROUP
 
 `//192.168.1.192/NASm2 /media/NASm2 cifs credentials=/etc/samba/credenziali-server,uid=1000,gid=1000,iocharset=utf8,_netdev,x-systemd.automount,vers=3.0 0 0`  
 
-* Riavvia
+* Riavvia  
+
+> :memo: **Note:** se riceviamo un *permisison denied* relativo a *cifs* dobbiamo aggiungere l'utente *samba* con `sudo smbpasswd -a nomeutente`  
 
 
 #### Software
