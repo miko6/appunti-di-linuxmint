@@ -203,7 +203,6 @@ domain=DOMINIO_OPPURE_WORKGROUP
 
 25. `sudo apt install mpv`
 
-> \
 > :memo: *script* da aggiungere: **[autoload.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua)** - **[autocrop.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autocrop.lua)**Per poter scorrere tra i file di una cartella con i tasti *PG ↑ & PG ↓* creare il file *input.conf* nella cartella */home/.config/mpv* con le seguenti righe:
 
 ```
