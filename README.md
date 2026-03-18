@@ -111,15 +111,7 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 
 * Creare una cartella in una posizione a piacere (ad esempio il desktop), clic con il tasto destro e scegliere *Opzioni condivisione*, abilitare la voce *Condividi questa cartella* e mettere la spunta a *Permetti ad altri di creare...*  
 
-* aggiungiamo le seguenti voci alla fine del file:
-
-```
-[nomeascelta]  
-path = /home/nomeutente/nomecartella  
-read only = no
-force user = nomeutente  
-guest ok = no
-```  
+* Riavvia
 
 18. *Montaggio automatico disco secondario*
 
@@ -168,10 +160,6 @@ password=tua_password
 domain=DOMINIO_OPPURE_WORKGROUP  
 ```
 
-* Salva il file e proteggilo rendendolo scrivibile solo da root:  
-
-`sudo chmod 644 /etc/samba/credenziali-server`  
-
 * Crea il Punto di Montaggio Locale  
 
 `sudo mkdir /media/NASm2`  
@@ -182,7 +170,7 @@ domain=DOMINIO_OPPURE_WORKGROUP
 
 * Aggiungi la seguente riga alla fine del file, sostituendo i valori segnaposto con i tuoi:  
 
-`//192.168.1.XXX/NASm2 /media/NASm2 cifs credentials=/etc/samba/credenziali-server,uid=1000,gid=1000,iocharset=utf8,_netdev,x-systemd.device-timeout=30,vers=3.0 0 0`  
+`//192.168.1.XXX/NASm2 /media/NASm2 cifs credentials=/etc/samba/credenziali-server,uid=1000,gid=1000,iocharset=utf8,_netdev,noexec,noserverino,vers=3.0,file_mode=0755,dir_mode=0755 0 0`  
 
 * Riavvia  
 
@@ -203,7 +191,7 @@ domain=DOMINIO_OPPURE_WORKGROUP
 
 25. `sudo apt install mpv`
 
-> :memo: *script* da aggiungere: **[autoload.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua)** - **[autocrop.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autocrop.lua)**Per poter scorrere tra i file di una cartella con i tasti *PG ↑ & PG ↓* creare il file *input.conf* nella cartella */home/.config/mpv* con le seguenti righe:
+> :memo: *script* da aggiungere nella cartella */home/.config/mpv/scripts*: **[autoload.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua)** - Per poter scorrere tra i file di una cartella con i tasti *PG ↑ & PG ↓* creare il file *input.conf* nella cartella */home/.config/mpv* con le seguenti righe:
 
 ```
 PGUP playlist-prev ; show-text "${playlist-pos-1}/${playlist-count}"
@@ -224,12 +212,12 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 
 29. **[MediaInfo](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)**[ tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
 30. Installare **[cpu-x](https://community.linuxmint.com/software/view/cpu-x)**
-31. \
+31.  
     * **[Chrome](https://support.google.com/chrome/a/answer/9025926?hl=it)**
     * Avidemux
     * Arduino IDE
     * **[Edge](https://www.microsoft.com/it-it/edge/download?form=MA13FJ)**
-    * **[Visual Studio Code](https://code.visualstudio.com/docs/setup/linux)**
+    * **[VSCodium](https://vscodium.com/#install)**
     * Audacity
     * Freecad
     * Kodi
@@ -264,4 +252,4 @@ aggiungiamo al file le seguenti linee
 
 35. Su Linux Mint abilitare *snap* per installare **acestreamplayer**
 
-`sudo rm /etc/apt/preferences.d/nosnap.prefsudo apt install snapdsudo snap install acestreamplayer`
+`sudo rm /etc/apt/preferences.d/nosnap.prefsudo apt install snapdsudo snap install acestreamplayer`  
