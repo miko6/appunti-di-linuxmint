@@ -236,7 +236,7 @@ Per togliere le due righe del benvenuto del nuovo terminale lanciamo il seguente
 `set -U fish_greeting ""`  
 
 Installare uno dei *[Nerd Font](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)*  
-(scaricare uno dei font, estrarlo dal file archivio e copiarli nella cartella *~/.local/share/fonts*)  
+(scaricare uno dei font **[JetBrains](https://www.jetbrains.com/lp/mono/)** - **[FiraCode](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)**, estrarlo dal file archivio e copiarli nella cartella *~/.local/share/fonts*)  
 lanciare il comando `fc-cache -f -v` per aggiornare la cahe dei font  
 torniamo nelle Preferenze del terminale e nella sezione del profilo settiamo il nerd font installato come predefinito e *11* come dimensione  
 
