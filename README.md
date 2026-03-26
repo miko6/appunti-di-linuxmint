@@ -228,9 +228,31 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
     * GParted
     * FFmpeg
 
-32. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**
+32. `sudo apt install fish`  
 
-33. Per evitare conflitti tra le *WebUi* dei servizi installati nel server andiamo a modificare il file `/etc/hosts` nel seguente modo: 
+A terminale aperto, cliccare con il tasto destro in un punto e cliccare su *Preferenze*. Andare nella sezione del profilo, tab *Comando*, spuntare l'opzione *Eseguire un comando personalizzato invece della shell* e nella sezione *Comando personalizzato* inserire */usr/bin/fish*  
+
+Per togliere le due righe del benvenuto del nuovo terminale lanciamo il seguente comando  
+`set -U fish_greeting ""`  
+
+Installare uno dei *[Nerd Font](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)*  
+(scaricare uno dei font, estrarlo dal file archivio e copiarli nella cartella *~/.local/share/fonts*)  
+lanciare il comando `fc-cache -f -v` per aggiornare la cahe dei font  
+torniamo nelle Preferenze del terminale e nella sezione del profilo settiamo il nerd font installato come predefinito e *11* come dimensione  
+
+Installare il plugin *[fisher](https://github.com/jorgebucaran/fisher)*  
+`fisher install IlanCosman/tide@v6` 
+seguiamo i passaggi per configurarlo, le mie scelte:  
+**3 (Rainbow) - 1 (True color) - 2 (24-hour format) - 2 (Vertical) - 1 (Sharp) - 1 (Flat) - 4 (Two lines, character and frame) - 3 (Solid) - 2 (Yes) - 4 (Darkest) - 2 (Sparse) - 2 (Many icons) - 2 (Yes) - y (Per sovrascrivere i cambiamenti)**  
+
+Per terminare possiamo aggiungere qualche configurazione al file `.config/fish/config.fish`  
+es. *alias clera clear*  
+
+digitare `fish_config` per ulteriori configurazioni  
+
+33. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**
+
+34. Per evitare conflitti tra le *WebUi* dei servizi installati nel server andiamo a modificare il file `/etc/hosts` nel seguente modo: 
 
 `sudo nano /etc/hosts`  
 
@@ -245,11 +267,11 @@ aggiungiamo al file le seguenti linee
 #### Extra
 
 
-34. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
+35. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
 
 `sudo apt install tlp tlp-rdw`
 
 
-35. Su Linux Mint abilitare *snap* per installare **acestreamplayer**
+36. Su Linux Mint abilitare *snap* per installare **acestreamplayer**
 
-`sudo rm /etc/apt/preferences.d/nosnap.prefsudo apt install snapdsudo snap install acestreamplayer`  
+`sudo rm /etc/apt/preferences.d/nosnap.prefsudo apt install snapdsudo snap install acestreamplayer`
