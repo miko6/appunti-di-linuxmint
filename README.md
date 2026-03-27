@@ -230,24 +230,34 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 
 32. `sudo apt install fish`  
 
-A terminale aperto, cliccare con il tasto destro in un punto e cliccare su *Preferenze*. Andare nella sezione del profilo, tab *Comando*, spuntare l'opzione *Eseguire un comando personalizzato invece della shell* e nella sezione *Comando personalizzato* inserire */usr/bin/fish*  
+- A terminale aperto, cliccare con il tasto destro in un punto e cliccare su *Preferenze*. Andare nella sezione del profilo, tab *Comando*, spuntare l'opzione *Eseguire un comando personalizzato invece della shell* e nella sezione *Comando personalizzato* inserire */usr/bin/fish*  
 
-Per togliere le due righe del benvenuto del nuovo terminale lanciamo il seguente comando  
+- Per togliere le due righe del benvenuto del nuovo terminale lanciamo il seguente comando  
 `set -U fish_greeting ""`  
 
-Installare uno dei *[Nerd Font](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)*  
-(scaricare uno dei font **[JetBrains](https://www.jetbrains.com/lp/mono/)** - **[FiraCode](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)**, estrarlo dal file archivio e copiarli nella cartella *~/.local/share/fonts*)  
+- Installare uno dei *[Nerd Font](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)*  
+(scaricare uno dei font **[JetBrains](https://www.jetbrains.com/lp/mono/)**, estrarlo dal file archivio e copiarli nella cartella *~/.local/share/fonts*)   
 lanciare il comando `fc-cache -f -v` per aggiornare la cahe dei font  
 torniamo nelle Preferenze del terminale e nella sezione del profilo settiamo il nerd font installato come predefinito e *11* come dimensione  
 
-Installare *[fisher](https://github.com/jorgebucaran/fisher)* + plugin *tide*  
+- Se ci sono problemi nella visualizzazione di alcuni font o icone lanciare i seguenti comandi:  
+```
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git  
+cd nerd-fonts  
+./install.sh Meslo  
+```
+`fc-cache -fv`  
+
+riavviare  
+
+- Installare *[fisher](https://github.com/jorgebucaran/fisher)* + plugin *tide*  
 seguiamo i passaggi per configurarlo, le mie scelte:  
 **3 (Rainbow) - 1 (True color) - 2 (24-hour format) - 2 (Vertical) - 1 (Sharp) - 1 (Flat) - 4 (Two lines, character and frame) - 3 (Solid) - 2 (Yes) - 4 (Darkest) - 2 (Sparse) - 2 (Many icons) - 2 (Yes) - y (Per sovrascrivere i cambiamenti)**  
 
-Per terminare possiamo aggiungere qualche configurazione al file `.config/fish/config.fish`  
+- Per terminare possiamo aggiungere qualche configurazione al file `.config/fish/config.fish`  
 es. *alias clera clear*  
 
-digitare `fish_config` per ulteriori configurazioni  
+- Digitare `fish_config` per ulteriori configurazioni    
 
 33. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**
 
