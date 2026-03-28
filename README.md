@@ -240,7 +240,7 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 lanciare il comando `fc-cache -f -v` per aggiornare la cahe dei font  
 torniamo nelle Preferenze del terminale e nella sezione del profilo settiamo il nerd font installato come predefinito e *11* come dimensione  
 
-- Se ci sono problemi nella visualizzazione di alcuni font o icone lanciare i seguenti comandi:  
+> :memo: Se ci sono problemi nella visualizzazione di alcuni font o icone lanciare i seguenti comandi:  
 ```
 git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git  
 cd nerd-fonts  
