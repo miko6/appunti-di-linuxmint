@@ -3,18 +3,18 @@
 #### Impostazioni del sistema
 
 
-1. *Avvio automatico* nelle impostazioni di installazione.  
-2. Attivare **Timeshift**.  
-3. *Impostazioni di sistema/Salvaschermo* - disattivare le due voci in *Impostazioni di blocco*.  
-4. Disattivare *bluetooth* in Applicazioni d'avvio.  
-5. Rimuovere il *separatore* accanto al menù.  
-6. Azzerare tempo *bootloader*.  
+1. *Avvio automatico* nelle impostazioni di installazione.
+2. Attivare **Timeshift**.
+3. *Impostazioni di sistema/Salvaschermo* - disattivare le due voci in *Impostazioni di blocco*.
+4. Disattivare *bluetooth* in Applicazioni d'avvio.
+5. Rimuovere il *separatore* accanto al menù.
+6. Azzerare tempo *bootloader*.
 
-* `sudo nano /etc/default/grub`  
-* settare *GRUB_TIMEOUT* a *0*  
-* dare un `sudo update-grub`  
-  
-7. Abilitare lo *scalamento frazionario* nelle impostazioni del monitor.  
+* `sudo nano /etc/default/grub`
+* settare *GRUB_TIMEOUT* a *0*
+* dare un `sudo update-grub`
+
+7. Abilitare lo *scalamento frazionario* nelle impostazioni del monitor.
 8. Attivare il **Firewall**
 9. Settare un *IP statico* e cambiare *DNS*.
 
@@ -31,13 +31,11 @@
 
 * Tasto destro sull'orologio, Configura, Utilizza un formato data personalizzato e scrivi nel campo Formato della data %R%n%x
 
-
 11. Dal *Gestore software* attivare i Flatpack non verificati (per installare ad esempio **Avidemux**).
 12. Tasto destro sul desktop Personalizza per aggiungere le icone *Home*, *Cestino*, *Rete* ecc.
 13. *Pannello trasparente*
 
 * Aprire il menu Estensioni, aggiungere l'applet Pannelli trasparenti, attivarli.
-
 
 14. In *Effetti* disabilitare **Effetti del desktop e della finestra**
 15. *Migliorare font su temi scuri*
@@ -48,8 +46,6 @@
 ```
 FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 ```
-
-
 16. *Font rendering fix*
 
 * Create a folder in home call it *.fontconfig* inside this folder create a blank text call it *fonts.conf* and paste this then log OFF/ON:
@@ -178,7 +174,6 @@ domain=DOMINIO_OPPURE_WORKGROUP
 
 #### Software
 
-
 20. `sudo apt install htop`
 21. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
 22. `sudo apt install unrar`
@@ -197,7 +192,6 @@ PGUP playlist-prev ; show-text "${playlist-pos-1}/${playlist-count}"
 PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 ```
 
-
 26. Icone **NUMIX**
 
 * `sudo apt install numix-icon-theme-circle `
@@ -207,7 +201,6 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 28. Installare *font microsoft*.
 
 * `sudo apt install ttf-mscorefonts-installer`
-
 
 29. **[MediaInfo](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)**[ tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
 30. Installare **[cpu-x](https://community.linuxmint.com/software/view/cpu-x)**
@@ -227,19 +220,23 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
     * GParted
     * FFmpeg
 
-32. `sudo apt install fish`  
+32. **Fish Shell**
+
+`echo 'deb http://download.opensuse.org/repositories/shells:/fish/Debian_13/ /' | sudo tee /etc/apt/sources.list.d/shells:fish.list`  
+
+`curl -fsSL https://download.opensuse.org/repositories/shells:fish/Debian_13/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish.gpg > /dev/null`  
+
+`sudo apt update`  
+
+`sudo apt install fish`  
 
 - A terminale aperto, cliccare con il tasto destro in un punto e cliccare su *Preferenze*. Andare nella sezione del profilo, tab *Comando*, spuntare l'opzione *Eseguire un comando personalizzato invece della shell* e nella sezione *Comando personalizzato* inserire */usr/bin/fish*  
 
 - Per togliere le due righe del benvenuto del nuovo terminale lanciamo il seguente comando  
 `set -U fish_greeting ""`  
 
-- Installare uno dei *[Nerd Font](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)*  
-(scaricare uno dei font **[JetBrains](https://www.jetbrains.com/lp/mono/)**, estrarlo dal file archivio e copiarli nella cartella *~/.local/share/fonts*)   
-lanciare il comando `fc-cache -f -v` per aggiornare la cahe dei font  
-torniamo nelle Preferenze del terminale e nella sezione del profilo settiamo il nerd font installato come predefinito e *11* come dimensione  
-
-> :memo: Se ci sono problemi nella visualizzazione di alcuni font o icone lanciare i seguenti comandi:  
+- Installare uno dei *[Nerd Font](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)*  - 
+- Il mio preferito è *Meslo*:
 ```
 git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git  
 cd nerd-fonts  
@@ -247,16 +244,18 @@ cd nerd-fonts
 ```
 `fc-cache -fv`  
 
-riavviare  
+andiamo nelle Preferenze del terminale e nella sezione del profilo settiamo il nerd font installato come predefinito e *11* come dimensione  
 
 - Installare *[fisher](https://github.com/jorgebucaran/fisher)* + plugin *tide*  
 seguiamo i passaggi per configurarlo, le mie scelte:  
 **3 (Rainbow) - 1 (True color) - 2 (24-hour format) - 2 (Vertical) - 1 (Sharp) - 1 (Flat) - 4 (Two lines, character and frame) - 3 (Solid) - 2 (Yes) - 4 (Darkest) - 2 (Sparse) - 2 (Many icons) - 2 (Yes) - y (Per sovrascrivere i cambiamenti)**  
 
-- Per terminare possiamo aggiungere qualche configurazione al file `.config/fish/config.fish`  
+- Per terminare possiamo aggiungere qualche configurazione al file `/home/nomeutente/.config/fish/config.fish`  
 es. *alias clera clear*  
 
-- Digitare `fish_config` per ulteriori configurazioni    
+- Digitare `fish_config` per ulteriori configurazioni  
+
+Riavviare  
 
 33. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**
 
@@ -273,7 +272,6 @@ aggiungiamo al file le seguenti linee
 ```
 
 #### Extra
-
 
 35. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
 
