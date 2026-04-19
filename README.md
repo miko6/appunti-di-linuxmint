@@ -219,8 +219,9 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
     * PDF Arranger
     * GParted
     * FFmpeg
+    * FileZilla
 
-32. **Fish Shell**
+33. **Fish Shell**
 
 `echo 'deb http://download.opensuse.org/repositories/shells:/fish/Debian_13/ /' | sudo tee /etc/apt/sources.list.d/shells:fish.list`  
 
