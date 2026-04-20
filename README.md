@@ -192,19 +192,13 @@ PGUP playlist-prev ; show-text "${playlist-pos-1}/${playlist-count}"
 PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 ```
 
-26. Icone **NUMIX**
-
-* `sudo apt install numix-icon-theme-circle `
-
-
-27. [Icone ](https://github.com/bikass/kora)**[KORA](https://github.com/bikass/kora)**
-28. Installare *font microsoft*.
+26. Installare *font microsoft*.
 
 * `sudo apt install ttf-mscorefonts-installer`
 
-29. **[MediaInfo](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)**[ tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
-30. Installare **[cpu-x](https://community.linuxmint.com/software/view/cpu-x)**
-31.  
+27. **[MediaInfo](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)**[ tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
+28. Installare **[cpu-x](https://community.linuxmint.com/software/view/cpu-x)**
+29.  
     * **[Chrome](https://support.google.com/chrome/a/answer/9025926?hl=it)**
     * Avidemux
     * Arduino IDE
@@ -221,7 +215,7 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
     * FFmpeg
     * FileZilla
 
-33. **Fish Shell**
+30. **Fish Shell**
 
 `echo 'deb http://download.opensuse.org/repositories/shells:/fish/Debian_13/ /' | sudo tee /etc/apt/sources.list.d/shells:fish.list`  
 
@@ -258,9 +252,9 @@ es. *alias clera clear*
 
 Riavviare  
 
-33. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**
+31. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**
 
-34. Per evitare conflitti tra le *WebUi* dei servizi installati nel server andiamo a modificare il file `/etc/hosts` nel seguente modo: 
+32. Per evitare conflitti tra le *WebUi* dei servizi installati nel server andiamo a modificare il file `/etc/hosts` nel seguente modo: 
 
 `sudo nano /etc/hosts`  
 
@@ -274,11 +268,11 @@ aggiungiamo al file le seguenti linee
 
 #### Extra
 
-35. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
+33. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
 
 `sudo apt install tlp tlp-rdw`
 
 
-36. Su Linux Mint abilitare *snap* per installare **acestreamplayer**
+34. Su Linux Mint abilitare *snap* per installare **acestreamplayer**
 
 `sudo rm /etc/apt/preferences.d/nosnap.prefsudo apt install snapdsudo snap install acestreamplayer`
