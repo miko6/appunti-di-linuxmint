@@ -119,7 +119,7 @@ UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /mnt/crucial  ntfs  defaults,noatime,
 
 - al riavvio `lsblk` per conferma  
 
-- Apriamo l'utility *Dischi*, clicchiamo sul disco e selezioniamo l'opzione * per vedere il disco nel tree del file manager
+- Apriamo l'utility *Dischi*, clicchiamo sul disco e poi sull'icona degli ingranaggi per entrare nelle opzioni, selezioniamo *Modifica opzioni di montaggio* spuntiamo *Mostrare nell'interfaccia grafica* per vedere il disco nel tree del file manager
 
 
 #### Software
