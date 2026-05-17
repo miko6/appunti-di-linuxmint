@@ -4,19 +4,18 @@
 
 
 1. *Avvio automatico* nelle impostazioni di installazione.
-2. Attivare **Timeshift**.
-3. *Impostazioni di sistema/Salvaschermo* - disattivare le due voci in *Impostazioni di blocco*.
-4. Disattivare *bluetooth* in Applicazioni d'avvio.
-5. Rimuovere il *separatore* accanto al menù.
-6. Azzerare tempo *bootloader*.
+2. *Impostazioni di sistema/Salvaschermo* - disattivare le due voci in *Impostazioni di blocco*.
+3. Disattivare *bluetooth* in Applicazioni d'avvio.
+4. Rimuovere il *separatore* accanto al menù, cambiare l'icona del menù e spostare le app al centor del pannello basso.
+5. Azzerare tempo *bootloader*.
 
 * `sudo nano /etc/default/grub`
 * settare *GRUB_TIMEOUT* a *0*
 * dare un `sudo update-grub`
 
-7. Abilitare lo *scalamento frazionario* nelle impostazioni del monitor.
-8. Attivare il **Firewall**
-9. Settare un *IP statico* e cambiare *DNS*.
+6. Abilitare lo *scalamento frazionario* nelle impostazioni del monitor.
+7. Attivare il **Firewall**
+8. Settare un *IP statico* e cambiare *DNS*.
 
 * Clic sull'icona di rete/Impostazioni di rete/Selezioniamo l'interfaccia di rete e clic sull'icona ingranaggio delle impostazioni, nella sezione IPV4 impostiamo i valori di Getaway e Subnet mask.
 * Impostiamo il *DNS* del server con PiHole oppure usiamo i classici:  
@@ -27,18 +26,18 @@
 | Google | 8.8.8.8 | 8.8.4.4 |
 
 
-10. *Data e ora* stile windows10.
+9. *Data e ora* stile windows10.
 
 * Tasto destro sull'orologio, Configura, Utilizza un formato data personalizzato e scrivi nel campo Formato della data %R%n%x
 
-11. Dal *Gestore software* attivare i Flatpack non verificati (per installare ad esempio **Avidemux**).
-12. Tasto destro sul desktop Personalizza per aggiungere le icone *Home*, *Cestino*, *Rete* ecc.
-13. *Pannello trasparente*
+10. Dal *Gestore software* attivare i Flatpack non verificati (per installare ad esempio **Avidemux**).
+11. Tasto destro sul desktop Personalizza per aggiungere le icone *Home*, *Cestino*, *Rete* ecc.
+12. *Pannello trasparente*
 
 * Aprire il menu Estensioni, aggiungere l'applet Pannelli trasparenti, attivarli.
 
-14. In *Effetti* disabilitare **Effetti del desktop e della finestra**
-15. *Migliorare font su temi scuri*
+13. In *Effetti* disabilitare **Effetti del desktop e della finestra**
+14. *Migliorare font su temi scuri*
 
 * `sudo nano /etc/environment`
 * aggiungere la seguente stringa alla fine del file:
@@ -46,7 +45,7 @@
 ```
 FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 ```
-16. *Font rendering fix*
+15. *Font rendering fix*
 
 * Create a folder in home call it *.fontconfig* inside this folder create a blank text call it *fonts.conf* and paste this then log OFF/ON:
 
@@ -88,35 +87,16 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 </fontconfig>
 ```
 
+16. *Montaggio automatico disco secondario e disco di rete*
 
-17. *Abilitare condivisione cartella*
+- creiamo il punto di mount per i due dischi  
 
-* `sudo apt install samba` (se non installato)
-* Controllare che l'utente in Utenti e Gruppi sia inserito nel gruppo sambashare
-* `sudo smbpasswd -a nomeutente`
-* digitare prima la password amministratore e poi due volte la password per la condivisione
-* riavviare il server samba con `sudo service smbd restart` o riavviare il sistema
-* Aggiungere una nuova regola sul firewall, le voci devono essere:  
+`sudo mkdir -p /mnt/crucial`
+`sudo mkdir -p /mnt/NASm2`  
 
-`| Politica | Consenti |`  
-`| Direzione | Ingresso |`  
-`| Categoria | Network |`  
-`| Sotto-categoria | Tutte |`  
-`| Applicazione | Samba |`  
-
-* Creare una cartella in una posizione a piacere (ad esempio il desktop), clic con il tasto destro e scegliere *Opzioni condivisione*, abilitare la voce *Condividi questa cartella* e mettere la spunta a *Permetti ad altri di creare...*  
-
-* Riavvia
-
-18. *Montaggio automatico disco secondario*
-
-- identificare il disco ed il suo *UUID* con il comando  
+- per montare all'avvio il disco secondario per prima cosa identificare il suo *UUID* con il comando  
 
 `sudo blkid`  
-
-- creiamo il punto di mount  
-
-`sudo mkdir -p /mnt/xxxx`  
 
 - modifica del file /etc/fstab  
 
@@ -124,7 +104,10 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 
 - aggiungiamo questa riga alla fine del file  
 
-`UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /mnt/xxxx  ext4  defaults,noatime,nofail  0  2`  
+```
+UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /mnt/crucial  ntfs  defaults,noatime,nofail  0  2`  
+//192.168.1.XXX/NASm2 /media/NASm2 cifs username=username,password=password,rw,uid=1000,gid=1000 0 0
+```
 
 - verifiche, prima senza riavviare  
 
@@ -136,54 +119,17 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 
 - al riavvio `lsblk` per conferma  
 
-19. *Montare disco di rete all'avvio*  
-
-* Per verificare che l'utility sia installata lanciare un:  
-
-`sudo apt update && sudo apt install cifs-utils`  
-
-* Crea un File per le Credenziali  
-
-`sudo mkdir -p /etc/samba`  
-`sudo nano /etc/samba/credenziali-server`  
-
-* Inserisci le tue credenziali nel file seguendo questa struttura senza spazi intorno al segno =:  
-
-```
-username=nome_utente_samba  
-password=tua_password  
-domain=DOMINIO_OPPURE_WORKGROUP  
-```
-
-* Crea il Punto di Montaggio Locale  
-
-`sudo mkdir /media/NASm2`  
-
-* Modifica il File */etc/fstab*  
-
-`sudo nano /etc/fstab` 
-
-* Aggiungi la seguente riga alla fine del file, sostituendo i valori segnaposto con i tuoi:  
-
-`//192.168.1.XXX/NASm2 /media/NASm2 cifs credentials=/etc/samba/credenziali-server,uid=1000,gid=1000,iocharset=utf8,_netdev,noexec,noserverino,vers=3.0,file_mode=0755,dir_mode=0755 0 0`  
-
-* Riavvia  
-
-> :memo: **Note:** se riceviamo un *permisison denied* relativo a *cifs* dobbiamo aggiungere l'utente *samba* con `sudo smbpasswd -a nomeutente`  
+- Apriamo l'utility *Dischi*, clicchiamo sul disco e selezioniamo l'opzione * per vedere il disco nel tree del file manager
 
 
 #### Software
 
-20. `sudo apt install htop`
-21. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
-22. `sudo apt install unrar`
-23. `sudo apt install git `
-24. `sudo apt install jq`
+17. `sudo apt install htop`
+18. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
+19. `sudo apt install unrar`
+20. `sudo apt install git `
 
-> :memo: **Note:** jq in Linux è un processore di JSON da riga di comando, flessibile e leggero, utilizzato per manipolare e trasformare dati in formato JSON
-
-
-25. `sudo apt install mpv`
+21. `sudo apt install mpv`
 
 > :memo: *script* da aggiungere nella cartella */home/.config/mpv/scripts*: **[autoload.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua)** - Per poter scorrere tra i file di una cartella con i tasti *PG ↑ & PG ↓* creare il file *input.conf* nella cartella */home/.config/mpv* con le seguenti righe:
 
@@ -192,30 +138,27 @@ PGUP playlist-prev ; show-text "${playlist-pos-1}/${playlist-count}"
 PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 ```
 
-26. Installare *font microsoft*.
+22. Installare *font microsoft*.
 
 * `sudo apt install ttf-mscorefonts-installer`
 
-27. **[MediaInfo](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)**[ tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
-28. Installare **[cpu-x](https://community.linuxmint.com/software/view/cpu-x)**
-29.  
+23. **[MediaInfo](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)**[ tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
+24. Installare **[cpu-x](https://community.linuxmint.com/software/view/cpu-x)**
+25.  
     * **[Chrome](https://support.google.com/chrome/a/answer/9025926?hl=it)**
     * Avidemux
     * Arduino IDE
-    * **[Edge](https://www.microsoft.com/it-it/edge/download?form=MA13FJ)**
-    * **[VSCodium](https://vscodium.com/#install)**
+    * **[VSCode](https://code.visualstudio.com/docs/setup/linux)**
     * Audacity
     * Freecad
-    * Kodi
     * **[Acestreamplayer](https://snapcraft.io/install/acestreamplayer/debian)**
     * Gimp
     * Telegram
     * PDF Arranger
     * GParted
-    * FFmpeg
     * FileZilla
 
-30. **Fish Shell**
+26. **Fish Shell**
 
 `echo 'deb http://download.opensuse.org/repositories/shells:/fish/Debian_13/ /' | sudo tee /etc/apt/sources.list.d/shells:fish.list`  
 
@@ -252,9 +195,9 @@ es. *alias clera clear*
 
 Riavviare  
 
-31. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**
+27. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**, **Libreria**, **Impronta digitale**
 
-32. Per evitare conflitti tra le *WebUi* dei servizi installati nel server andiamo a modificare il file `/etc/hosts` nel seguente modo: 
+28. Per evitare conflitti tra le *WebUi* dei servizi installati nel server andiamo a modificare il file `/etc/hosts` nel seguente modo: 
 
 `sudo nano /etc/hosts`  
 
@@ -268,11 +211,6 @@ aggiungiamo al file le seguenti linee
 
 #### Extra
 
-33. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
+29. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
 
-`sudo apt install tlp tlp-rdw`
-
-
-34. Su Linux Mint abilitare *snap* per installare **acestreamplayer**
-
-`sudo rm /etc/apt/preferences.d/nosnap.prefsudo apt install snapdsudo snap install acestreamplayer`
+`sudo apt install tlp tlp-rdw`  
