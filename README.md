@@ -182,7 +182,7 @@ cd nerd-fonts
 ```
 `fc-cache -fv`  
 
-andiamo nelle Preferenze del terminale e nella sezione del profilo settiamo il nerd font installato come predefinito e *11* come dimensione  
+andiamo nelle Preferenze del terminale e nella sezione del profilo settiamo il nerd font installato come predefinito e *10* come dimensione  
 
 - Installare *[fisher](https://github.com/jorgebucaran/fisher)* + plugin *tide*  
 seguiamo i passaggi per configurarlo, le mie scelte:  
