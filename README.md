@@ -131,7 +131,30 @@ UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /mnt/crucial  ntfs  defaults,noatime,
 
 21. `sudo apt install mpv`
 
-> :memo: *script* da aggiungere nella cartella */home/.config/mpv/scripts*: **[autoload.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua)** - Per poter scorrere tra i file di una cartella con i tasti *PG ↑ & PG ↓* creare il file *input.conf* nella cartella */home/.config/mpv* con le seguenti righe:
+> :memo: *script* da aggiungere nella cartella */home/.config/mpv/scripts*: **[autoload.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua)** - **[blacklist-extensions.lua](https://github.com/occivink/mpv-scripts/blob/master/scripts/blacklist-extensions.lua)** file da aggiungere nella cartella */home/.config/mpv/script-opts*:  
+
+autoload.conf  
+```
+directory_mode=ignore
+```
+
+blacklist_extension.conf
+```
+# only one of blacklist, whitelist should be defined at a time
+
+# only allow video and image formats
+whitelist=mkv,webm,mp4,avi
+
+# alternatively, blacklist formats commonly found near videos
+#blacklist=srt,ass,mks,mka,png,jpg,jpeg,gif
+
+remove_files_without_extension=yes
+
+# if the script should be applied only at the beginning, or anytime the playlist changes
+oneshot=yes
+```
+
+Per poter scorrere tra i file di una cartella con i tasti *PG ↑ & PG ↓* creare il file *input.conf* nella cartella */home/.config/mpv* con le seguenti righe:
 
 ```
 PGUP playlist-prev ; show-text "${playlist-pos-1}/${playlist-count}"
