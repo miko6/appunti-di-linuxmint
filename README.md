@@ -171,7 +171,7 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
     * **[Chrome](https://support.google.com/chrome/a/answer/9025926?hl=it)**
     * Avidemux
     * Arduino IDE
-    * **[VSCode](https://code.visualstudio.com/docs/setup/linux)**
+    * VSCodium
     * Audacity
     * Freecad
     * **[Acestreamplayer](https://snapcraft.io/install/acestreamplayer/debian)**
