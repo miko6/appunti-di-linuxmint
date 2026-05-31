@@ -229,7 +229,8 @@ aggiungiamo al file le seguenti linee
 ```
 192.168.1.xxx   pi.hole  
 192.168.1.xxx   webmin.local  
-192.168.1.xxx   portainer.local  
+192.168.1.xxx   portainer.local
+192.168.1.xxx   bentopdf.local  
 ```
 
 #### Extra
