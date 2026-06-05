@@ -87,7 +87,15 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 </fontconfig>
 ```
 
-16. *Montaggio automatico disco secondario e disco di rete*
+16. Generare la chiave SSH
+
+`ssh-keygen -t ed25519`
+
+`ssh-copy-id 192.168.1.xxx`
+
+`ssh 192.168.1.xxx`  per test
+
+17. *Montaggio automatico disco secondario e disco di rete*
 
 - creiamo il punto di mount per i due dischi  
 
@@ -119,26 +127,26 @@ UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /mnt/crucial  ntfs  defaults,noatime,
 
 - al riavvio `lsblk` per conferma  
 
-- Apriamo l'utility *Dischi*, clicchiamo sul disco e poi sull'icona degli ingranaggi per entrare nelle opzioni, selezioniamo *Modifica opzioni di montaggio* spuntiamo *Mostrare nell'interfaccia grafica* per vedere il disco nel tree del file manager
+- Apriamo l'utility *Dischi*, clicchiamo sul disco e poi sull'icona degli ingranaggi per entrare nelle opzioni, selezioniamo *Modifica opzioni di montaggio* spuntiamo *Mostrare nell'interfaccia grafica* per vedere il disco nel tree del file manager  
 
 
 #### Software
 
-17. `sudo apt install htop`
-18. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
-19. `sudo apt install unrar`
-20. `sudo apt install git `
+18. `sudo apt install htop`
+19. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
+20. `sudo apt install unrar`
+21. `sudo apt install git `
 
-21. `sudo apt install mpv`
+22. `sudo apt install mpv`
 
 > :memo: *script* da aggiungere nella cartella */home/.config/mpv/scripts*: **[autoload.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua)** - **[blacklist-extensions.lua](https://github.com/occivink/mpv-scripts/blob/master/scripts/blacklist-extensions.lua)** file da aggiungere nella cartella */home/.config/mpv/script-opts*:  
 
-autoload.conf  
+# autoload.conf  
 ```
 directory_mode=ignore
 ```
 
-blacklist_extension.conf
+# blacklist_extension.conf
 ```
 # only one of blacklist, whitelist should be defined at a time
 
@@ -154,24 +162,24 @@ remove_files_without_extension=yes
 oneshot=yes
 ```
 
-Per poter scorrere tra i file di una cartella con i tasti *PG ↑ & PG ↓* creare il file *input.conf* nella cartella */home/.config/mpv* con le seguenti righe:
+- Per poter scorrere tra i file di una cartella con i tasti *PG ↑ & PG ↓* creare il file *input.conf* nella cartella */home/.config/mpv* con le seguenti righe:
 
 ```
 PGUP playlist-prev ; show-text "${playlist-pos-1}/${playlist-count}"
 PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 ```
 
-22. Installare *font microsoft*.
+23. Installare *font microsoft*.
 
 * `sudo apt install ttf-mscorefonts-installer`
 
-23. **[MediaInfo](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)**[ tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
-24. Installare **[cpu-x](https://community.linuxmint.com/software/view/cpu-x)**
-25.  
+24. **[MediaInfo](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)**[ tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
+25. Installare **[cpu-x](https://community.linuxmint.com/software/view/cpu-x)**
+26.  
     * **[Chrome](https://support.google.com/chrome/a/answer/9025926?hl=it)**
     * Avidemux
     * Arduino IDE
-    * VSCodium
+    * Kate
     * Audacity
     * Freecad
     * **[Acestreamplayer](https://snapcraft.io/install/acestreamplayer/debian)**
@@ -181,7 +189,7 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
     * GParted
     * FileZilla
 
-26. **Fish Shell**
+27. **Fish Shell**
 
 `echo 'deb http://download.opensuse.org/repositories/shells:/fish/Debian_13/ /' | sudo tee /etc/apt/sources.list.d/shells:fish.list`  
 
@@ -196,7 +204,7 @@ PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 - Per togliere le due righe del benvenuto del nuovo terminale lanciamo il seguente comando  
 `set -U fish_greeting ""`  
 
-- Installare uno dei *[Nerd Font](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)*  - 
+- Installare uno dei *[Nerd Font](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)*  
 - Il mio preferito è *Meslo*:
 ```
 git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git  
@@ -218,9 +226,29 @@ es. *alias clera clear*
 
 Riavviare  
 
-27. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**, **Libreria**, **Impronta digitale**
+28. Disinstallare **Firefox**, **Thunderbird**, **Matrix**, **Celluloid**, **Xreader**, **Libreria**, **Impronta digitale**
 
-28. Per evitare conflitti tra le *WebUi* dei servizi installati nel server andiamo a modificare il file `/etc/hosts` nel seguente modo: 
+29. Configuriamo òa scheda di rete per raggiungere i domini .local presenti sul server locale:
+
+# 0. - Troviamo il nome della connessione di rete
+`nmcli connection show --active` 
+
+# 1. Imposta il DNS sul tuo server ed esclude quelli automatici del router
+`sudo nmcli connection modify "Wired connection 1" ipv4.dns "192.168.1.192" ipv4.ignore-auto-dns yes`
+
+# 2. Disattiva l'IPv6 su questa connessione per evitare che scavalchi il Pi-hole
+`sudo nmcli connection modify "Wired connection 1" ipv6.method "ignore"`
+
+# 3. Dice al sistema di inviare le richieste .local al tuo DNS
+`sudo nmcli connection modify "Wired connection 1" ipv4.dns-search "~local"`
+
+# 4. Riattiva la scheda e svuota la cache
+`sudo nmcli connection down "Wired connection 1" && sudo nmcli connection up "Wired connection 1" && sudo resolvectl flush-caches`
+
+# 5. Verifica finale
+`resolvectl query portainer.local`
+
+  * Per evitare conflitti tra le *WebUi* o se ci sono problemi a far digerire pihole come DNSResolve, andiamo a modificare il file `/etc/hosts` nel seguente modo: 
 
 `sudo nano /etc/hosts`  
 
@@ -229,12 +257,14 @@ aggiungiamo al file le seguenti linee
 ```
 192.168.1.xxx   pi.hole  
 192.168.1.xxx   webmin.local  
-192.168.1.xxx   portainer.local
-192.168.1.xxx   bentopdf.local  
-```
+192.168.1.xxx   portainer.local  
+192.168.1.xxx   bentopdf.local 
+```  
 
-#### Extra
+###### Extra
 
-29. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
+30. Sul Thinkpad installare **tlp** per l'ottimizzazione batteria
 
 `sudo apt install tlp tlp-rdw`  
+
+31. Modificare la dimensione del *Terminale* a **110** colonne  
