@@ -230,22 +230,22 @@ Riavviare
 
 29. Configuriamo òa scheda di rete per raggiungere i domini .local presenti sul server locale:
 
-# 0. - Troviamo il nome della connessione di rete
+##### 0. - Troviamo il nome della connessione di rete
 `nmcli connection show --active` 
 
-# 1. Imposta il DNS sul tuo server ed esclude quelli automatici del router
+##### 1. Imposta il DNS sul tuo server ed esclude quelli automatici del router
 `sudo nmcli connection modify "Wired connection 1" ipv4.dns "192.168.1.192" ipv4.ignore-auto-dns yes`
 
-# 2. Disattiva l'IPv6 su questa connessione per evitare che scavalchi il Pi-hole
+##### 2. Disattiva l'IPv6 su questa connessione per evitare che scavalchi il Pi-hole
 `sudo nmcli connection modify "Wired connection 1" ipv6.method "ignore"`
 
-# 3. Dice al sistema di inviare le richieste .local al tuo DNS
+##### 3. Dice al sistema di inviare le richieste .local al tuo DNS
 `sudo nmcli connection modify "Wired connection 1" ipv4.dns-search "~local"`
 
-# 4. Riattiva la scheda e svuota la cache
+##### 4. Riattiva la scheda e svuota la cache
 `sudo nmcli connection down "Wired connection 1" && sudo nmcli connection up "Wired connection 1" && sudo resolvectl flush-caches`
 
-# 5. Verifica finale
+##### 5. Verifica finale
 `resolvectl query portainer.local`
 
   * Per evitare conflitti tra le *WebUi* o se ci sono problemi a far digerire pihole come DNSResolve, andiamo a modificare il file `/etc/hosts` nel seguente modo: 
