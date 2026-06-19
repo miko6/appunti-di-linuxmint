@@ -99,8 +99,9 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 
 - creiamo il punto di mount per i due dischi  
 
-`sudo mkdir -p /mnt/crucial`  
-`sudo mkdir -p /mnt/NASm2`  
+`sudo mkdir -p /mnt/crucial`
+`sudo mkdir -p /mnt/NASm2`
+`sudo mkdir -p /mnt/seagate`
 
 - per montare all'avvio il disco secondario per prima cosa identificare il suo *UUID* con il comando  
 
@@ -115,6 +116,7 @@ FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
 ```
 UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /mnt/crucial  ntfs  defaults,noatime,nofail  0  2`  
 //192.168.1.XXX/NASm2 /media/NASm2 cifs username=username,password=password,rw,uid=1000,gid=1000 0 0
+//192.168.1.192/seagate /mnt/seagate cifs username=username,password=password,rw,uid=1000,gid=1000,vers=3.0,_netdev,nofail,x-gvfs-show 0 0
 ```
 
 - verifiche, prima senza riavviare  
@@ -141,12 +143,12 @@ UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /mnt/crucial  ntfs  defaults,noatime,
 
 > :memo: *script* da aggiungere nella cartella */home/.config/mpv/scripts*: **[autoload.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua)** - **[blacklist-extensions.lua](https://github.com/occivink/mpv-scripts/blob/master/scripts/blacklist-extensions.lua)** file da aggiungere nella cartella */home/.config/mpv/script-opts*:  
 
-##### autoload.conf  
+# autoload.conf  
 ```
 directory_mode=ignore
 ```
 
-##### blacklist_extension.conf
+# blacklist_extension.conf
 ```
 # only one of blacklist, whitelist should be defined at a time
 
