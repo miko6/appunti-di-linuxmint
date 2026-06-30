@@ -1,4 +1,4 @@
-## My Linux Mint LMDE 7 customization  ![alt](https://github.com/miko6/appunti-di-linuxmint/blob/main/immagini/mintlogo.png)
+## My Linux Mint LMDE 7 customization  ![alt](http://gitea.local/miko/appunti-di-linuxmint/raw/branch/main/immagini/mintlogo.png)
 
 #### Impostazioni del sistema
 
