@@ -275,4 +275,22 @@ aggiungiamo al file le seguenti linee
 
 `sudo apt install tlp tlp-rdw`  
 
-31. Modificare la dimensione del *Terminale* a **110** colonne  
+31. Modificare la dimensione del *Terminale* a **110** colonne
+
+32. 32. nvim (appimage)  
+
+- `curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage`  
+- `chmod u+x nvim-linux-x86_64.appimage`  
+- `sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim`  
+- installiamo alcune dipendenze:  
+  `sudo apt update`  
+  `sudo apt install build-essential git curl -y`  
+  `sudo apt install nodejs npm -y`  
+  `sudo apt install tree-sitter-cli -y`  
+- copiare il contenuto del file *init.lua* nel percorso */home/user/.config/nvim/*  
+- riavviare *nvim* e accertarsi che si sia intallato tutto, qualora **Lazy** desse problemi utilizziamo il seguente comando *curl*:  
+  `git clone --filter=blob:none "https://github.com/folke/lazy.nvim.git" --branch=stable ~/.local/share/nvim/lazy/lazy.nvim`  
+- riavviamo *nvim* che qeusta volta dovrebbe avviarsi senza problemi  
+- per finire diamo questi due comandi:  
+  `cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app`  
+  `npm install`  
