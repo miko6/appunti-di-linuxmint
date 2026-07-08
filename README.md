@@ -177,7 +177,23 @@ PGUP playlist-prev ; show-text "${playlist-pos-1}/${playlist-count}"
 PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 ```
 
-23. Installare *font microsoft*.
+23. `sudo apt install flameshot`  
+
+- Apri il Menu delle applicazioni di Linux Mint.  
+- Cerca e apri le Impostazioni di sistema (o digita direttamente Tastiera).  
+- Spostati sulla scheda Scorciatoie (o Shortcuts) in alto.  
+- Nel pannello di sinistra, clicca sulla voce Scorciatoie personalizzate.  
+- Fai clic sul pulsante Aggiungi scorciatoia personalizzata.  
+- Compila i campi della finestra pop-up con queste informazioni:    
+```
+Nome: Flameshot  
+Comando: flameshot gui (Se hai installato la versione Flatpak, usa il comando: flatpak run org.flameshot.Flameshot gui)  
+Clicca su Aggiungi.  
+Nella sezione inferiore "Associazioni di tasti", fai doppio clic sulla prima riga vuota con la scritta non assegnato. La dicitura cambierà in "Premi un tasto...". Premi il tasto Stamp (o PrtSc) sulla tastiera.    
+Il sistema mostrerà un avviso informandoti che il tasto è già in uso. Conferma cliccando su Sì (o Riassegna) per trasferire il tasto a Flameshot.  
+```
+
+24. Installare *font microsoft*.
 
 * `sudo apt install ttf-mscorefonts-installer`
 
@@ -277,7 +293,7 @@ aggiungiamo al file le seguenti linee
 
 31. Modificare la dimensione del *Terminale* a **110** colonne
 
-32. 32. nvim (appimage)  
+32. nvim (appimage)  
 
 - `curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage`  
 - `chmod u+x nvim-linux-x86_64.appimage`  
