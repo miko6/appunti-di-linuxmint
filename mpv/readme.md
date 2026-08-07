@@ -1,0 +1,1 @@
+La cartella *mpv*, con le relative cartelle dentro contenute, va copiata nella directory nascosta della */home* chiamata *.config/*
