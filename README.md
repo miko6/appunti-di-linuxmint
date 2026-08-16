@@ -144,9 +144,8 @@ UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /mnt/crucial  ntfs  defaults,noatime,
 19. `sudo apt install preload`  (caricamento in memoria dei programmi più usati)
 20. `sudo apt install unrar`
 21. `sudo apt install git `
-22. `sudo apt install notepadqq`
 
-23. `sudo apt install mpv`
+22. `sudo apt install mpv`
 
 > :memo: *script* da aggiungere nella cartella */home/.config/mpv/scripts*: **[autoload.lua](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua)** - **[blacklist-extensions.lua](https://github.com/occivink/mpv-scripts/blob/master/scripts/blacklist-extensions.lua)** file da aggiungere nella cartella */home/.config/mpv/script-opts*:  
 
@@ -178,7 +177,7 @@ PGUP playlist-prev ; show-text "${playlist-pos-1}/${playlist-count}"
 PGDWN playlist-next ; show-text "${playlist-pos-1}/${playlist-count}"
 ```
 
-24. `sudo apt install flameshot`  
+23. `sudo apt install flameshot`  
 
 - Apri il Menu delle applicazioni di Linux Mint.  
 - Cerca e apri le Impostazioni di sistema (o digita direttamente Tastiera).  
@@ -194,25 +193,25 @@ Nella sezione inferiore "Associazioni di tasti", fai doppio clic sulla prima rig
 Il sistema mostrerà un avviso informandoti che il tasto è già in uso. Conferma cliccando su Sì (o Riassegna) per trasferire il tasto a Flameshot.  
 ```
 
-25. Installare *font microsoft*.
+24. Installare *font microsoft*.
 
 * `sudo apt install ttf-mscorefonts-installer`
 
-26. **[MediaInfo](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)**[ tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
-27. Installare **[cpu-x](https://community.linuxmint.com/software/view/cpu-x)**
-28.  
+25. **[MediaInfo](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)**[ tab](https://github.com/linux-man/nemo-mediainfo-tab/releases/tag/v1.0.4)
+26. Installare **[cpu-x](https://community.linuxmint.com/software/view/cpu-x)**
+27.  
     * **[Chrome](https://support.google.com/chrome/a/answer/9025926?hl=it)**
     * Avidemux
     * Arduino IDE
-    * Kate
     * Audacity
     * Freecad
     * **[Acestreamplayer](https://snapcraft.io/install/acestreamplayer/debian)**
     * Gimp
     * Telegram
-    * PDF Arranger
     * GParted
     * FileZilla
+    * **[Lite-xl](https://lite-xl.com/setup/getting-started/)**
+    * GearLever
 
 29. **Fish Shell**
 
